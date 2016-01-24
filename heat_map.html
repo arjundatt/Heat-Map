@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="jquery-1.8.2.js"></script>
+		<script src="jquery-ui.js"></script>
+		<script src="heat_map.js"></script>
+		<script src="Heat_map_bars.js"></script>
+		<script src="upload_metaData_parser.js"></script>
+		<link rel="stylesheet" href="heat_map.css" />
+		<script>
+		$(window).resize(function() {
+		  //$(".col_list_class").css("margin-bottom",(0.90*(parseInt($(".bar").css("width"))))+"px");
+		  //$("#col_list").css("height",$("#bar_chart").css("width"));
+		//$(".col_list_class").css("top",(0.10*parseInt($("#bar_chart").css("left")))+"px");
+		});
+
+		</script>
+	</head>
+	<body onload="mode_change(1);">
+		<form name="multi_mode_form" method="get" action="multi_heat_map.html" style="visibility:hidden;"></form>
+		<div id="data_div">
+			<div id="close_arrow"></div>
+			<div id="open_arrow"></div>
+			<textarea id="csv_data1" class="data_textarea"></textarea>
+			<button id="generate_map" class="buttons_" onclick="cleanUP();">Generate Map</button>
+			<button id="single_map" class="buttons_" onclick="">Single-Map Mode</button>
+			<button id="multi_map" class="buttons_" onclick="call_multi_mode();">Multi-Map Mode</button>
+		</div>
+		<div id="map_div">
+		<div id="col_list">
+		</div>
+		<div id="bar_chart"></div>
+		<div id="graph_containers">
+			<div id="bar_graph_div">
+				<div id="axis"></div>
+				<div id="graph_title"></div>
+			</div>
+			<div id="bar_graph_colwise_div">
+				<div id="axis2"></div>
+				<div id="colwise_graph_title"></div>
+			</div>
+		</div>
+		<div id="row_list">
+		</div>
+		</div>
+
+		<div id="color_chart_cover">
+			<div id="color_opt_low">
+				<ul>
+								<li id="color_low_1" class="color_opt_list" style="background:#024d92;" onclick="changeCOLOR_MAP('024d92',1,1,1);"></li></ul>
+				<ul>
+								<li id="color_low_2" class="color_opt_list" style="background:#178A02;" onclick="changeCOLOR_MAP('178A02',2,1,1);"></li></ul>
+				<ul>
+								<li id="color_low_3" class="color_opt_list" style="background:#d50101;" onclick="changeCOLOR_MAP('d50101',3,1,1);"></li></ul>
+				<ul>
+								<li id="color_low_4" class="color_opt_list" style="background:#FFD700;" onclick="changeCOLOR_MAP('eeac06',4,1,1);"></li></ul>
+				<ul>
+								<li id="color_low_5" class="color_opt_list" style="background:#66023C;" onclick="changeCOLOR_MAP('66023C',5,1,1);"></li></ul>
+			</div>
+
+			<div id="color_opt_high">
+				<ul>
+								<li id="color_high_1" class="color_opt_list" style="background:#02339B;" onclick="changeCOLOR_MAP('024d92',1,2,1);"></li></ul>
+				<ul>
+								<li id="color_high_2" class="color_opt_list" style="background:#178A02;" onclick="changeCOLOR_MAP('024d92',2,2,1);"></li></ul>
+				<ul>
+								<li id="color_high_3" class="color_opt_list" style="background:#DD2501;" onclick="changeCOLOR_MAP('024d92',3,2,1);"></li></ul>
+				<ul>
+								<li id="color_high_4" class="color_opt_list" style="background:#FFD700;" onclick="changeCOLOR_MAP('eeac06',4,2,1);"></li></ul>
+				<ul>
+								<li id="color_high_5" class="color_opt_list" style="background:#66023C;" onclick="changeCOLOR_MAP('66023C0',5,2,1);"></li></ul>
+			</div>
+
+			<div id="color_chart" class="chart">
+				<ul style="list-style-type: none;
+				overflow: hidden;
+				clear: both;-webkit-padding-start: 14px;-moz-padding-start: 14px">
+								<li id="q1_1" class="q1" title="Click to change color" style="cursor:pointer;"></li>
+								<li id="q2_1" class="q2"></li>
+								<li id="q3_1" class="q3"></li>
+								<li id="q4_1" class="q4"></li>
+								<li id="q5_1" class="q5"></li>
+								<li id="q6_1" class="q6"></li>
+								<li id="q7_1" class="q7"></li>
+								<li id="q8_1" class="q8"></li>
+								<li id="q9_1" class="q9"></li>
+								<li id="q10_1" class="q10"></li>
+								<li id="q11_1" class="q11" title="Click to change color" style="cursor:pointer;"></li>
+				</ul>
+				<p id="more" class="more">high</p>
+				<p id="less" class="less">low</p>
+			</div>
+		</div>
+		<script src="heat_map_data_div_slide.js"></script>
+	</body>
+</html>
