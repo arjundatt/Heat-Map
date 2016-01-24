@@ -1,3 +1,7 @@
+/* Copyright (C) 2013, arjun d. sharma
+* This file is part of Heat-Map.js.
+*/
+
 var file_upload_FLAG = 0;
 var LIST_FILES=new Array();
 var applicationROOT="www";

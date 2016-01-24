@@ -1,3 +1,7 @@
+/* Copyright (C) 2013, arjun d. sharma
+* This file is part of Heat-Map.js.
+*/
+
 /* This is the driver code for the web application*/
 
 var csv_data="";

@@ -1,3 +1,7 @@
+/* Copyright (C) 2013, arjun d. sharma
+* This file is part of Heat-Map.js.
+*/
+
 createBar = function createBar(top_pos,left_pos,bar_id,breadth,value,color,col_heading,map_numb) { 
 		data = { id : bar_id+"bar", top : top_pos+"px", left : left_pos+"%" }
 		//alert(map_numb);
